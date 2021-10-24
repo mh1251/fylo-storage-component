@@ -1,0 +1,213 @@
+* {
+    box-sizing: border-box;
+    color: hsl(243, 78%, 86%);
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+}
+
+body {
+    background: url(./images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 100% 50%;
+    min-height: 100vh;
+    background-color: hsl(229, 57%, 11%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    gap: 10px;
+    justify-content: space-evenly;
+    max-width: 60%;
+}
+
+/*//////////////////////// FYLO LEFT CONTAINER STYLING////////////////////////////////////////////////////*/
+
+.fylo-left {
+    background-color: hsl(228, 56%, 26%);
+    padding: 30px 80px 30px 30px;
+    border-radius: 10px 100px 10px 10px;
+    width: 300px;
+    min-width: 300px;
+}
+
+.fylo-logo {
+   scale: 0.9;
+   margin-left: -6px;
+}
+
+.fylo-icons {
+    display: flex;
+    justify-content: start;
+    margin-top: 20px;
+}
+
+button {
+    background-color: hsl(229, 57%, 11%);
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    
+}
+
+button > img {
+    scale: 0.9;
+}
+
+button:hover, button:focus {
+    background-color:rgb(240, 194, 194);
+    transition: ease-in-out 400ms;
+}
+
+button:focus {
+    outline: none;
+ }
+
+/*////////////////////// FYLO RIGHT CONTAINER STYLING///////////////////////////////////////*/
+
+.fylo-right {
+    width: 500px;
+    min-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    background-color: hsl(228, 56%, 26%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    align-self: end;
+    padding: 15px 40px 30px;
+    margin-left: 15px;
+    position: relative;
+}
+
+span {
+    font-weight: 700;
+    color: white;
+}
+
+/*//////////////////////// progress bar styling ////////////////////////////////////*/
+
+.progress-bar {
+   width: 100%;
+}
+
+.progress-bar-empty {
+    box-sizing: content;
+    border-radius: 1000px;
+    height: 15px;
+    width: 100%;
+    background-color:hsl(229, 57%, 11%);
+    border-top: solid 8px hsl(229, 57%, 11%);
+    border-bottom: solid 8px hsl(229, 57%, 11%);
+    display:flex;
+    align-items: center;
+    align-content: center;
+   
+}
+
+.progress-bar-full {
+    width: 81.5%;
+    background-image: linear-gradient(45deg,hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+    height:12px;
+    border-radius: inherit;
+    margin-left: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.progress-circle {
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    background-color: white;
+}
+
+.memory-limit {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+/*/////////////////////////////// memory left styling /////////////////////////////////////////////*/ 
+
+.memory-left {
+position: absolute;
+top: -30%;
+right: 10%;
+width: auto;
+height: auto;
+font-size: 30px;
+font-weight: 700;
+background-color: white;
+color: black;
+padding: 10px 20px;
+border-radius: 5px;
+}
+
+.memory-left > span {
+    color: gray;
+    vertical-align: center;
+    font-size: 14px;
+}
+
+.memory-left::before {
+    content: '';
+    height: 30px;
+    width: 30px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+    background: white;
+    position: absolute;
+    bottom:-30%;
+    right:0;
+}
+
+
+/*/////////////// MEDIA  QUERIES ///////////////////////////////*/
+
+@media only screen and (max-width: 780px) {
+ 
+    body {
+        background: url(./images/bg-mobile.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .fylo-right, .fylo-left {
+        margin: 0px;
+        max-width: 300px;
+        padding: 30px;
+    }
+
+    .fylo-right {
+        padding-bottom: 40px;
+    }
+
+    .memory-left::before {
+       display: none;
+    }
+
+    .memory-left {
+        top: 80%;
+        right: 27%;
+        text-align:center;
+    }
+}
